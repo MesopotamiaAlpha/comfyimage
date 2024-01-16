@@ -1,0 +1,15 @@
+{
+  "name": "comfyimage",
+  "version": "1.0.0",
+  "description": "Projeto sendo desenvolvido em paralelo com o comfyui",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jane Doe",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.1.3"
+  }
+}
