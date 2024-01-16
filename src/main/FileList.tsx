@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-function FileList() {
-  const [files, setFiles] = useState([]);
+interface FileListProps {}
+
+// eslint-disable-next-line react/function-component-definition
+const ListaDeArquivos: React.FC<FileListProps> = () => {
+  const [files, setFiles] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchFiles = async () => {
@@ -27,6 +30,6 @@ function FileList() {
       </ul>
     </div>
   );
-}
+};
 
-export default FileList;
+export default ListaDeArquivos;
