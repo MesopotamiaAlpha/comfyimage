@@ -1,0 +1,26 @@
+.BarraSup{
+  background-color: black;
+  padding: 10px; /* Adicionado para um espaçamento interno */
+  display: flex;
+  justify-content: space-between; /* Alinha os itens no topo da barra e os separa */
+  align-items: center; /* Centraliza os itens verticalmente */
+  position: fixed; /* Torna a barra fixa no topo */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+}
+
+
+.BarraSup{
+  background-color: black;
+  padding: 10px; /* Adicionado para um espaçamento interno */
+  display: flex;
+  justify-content: space-between; /* Alinha os itens no topo da barra e os separa */
+  align-items: center; /* Centraliza os itens verticalmente */
+  position: fixed; /* Torna a barra fixa no topo */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+}

@@ -1,8 +1,9 @@
 import { MemoryRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
 import './App.css';
-import MyComponent from '../components/txt2img/txt2img';
+import Txt2imgComp from '../components/txt2img/txt2img';
 import Home from '../components/home/home';
+
 
 function Hello() {
   return (
@@ -29,12 +30,14 @@ function Hello() {
 
 export default function App() {
   return (
+    <div className="CaixaIntro">
     <Router>
       <Routes>
         <Route path="/" element={<Hello />} />
-        <Route path="/txt2img" element={<MyComponent text="" />} />
+        <Route path="/txt2img/*" element={<Txt2imgComp text={'txt2img'} />} />
         {/* Adicione outras rotas conforme necessário */}
       </Routes>
     </Router>
+    </div>
   );
 }

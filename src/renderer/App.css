@@ -8,10 +8,12 @@ body {
   height: 100vh;
   background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
   font-family: sans-serif;
-  overflow-y: hidden;
+  /* Os comentados abaixo estão quebrando todo o css  */
+
+  /*  overflow-y: hidden;  */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 button {
@@ -54,4 +56,25 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+
+.CaixaIntro{
+  background-color: aqua;
+}
+
+.CaixaTxt2img{
+  background-color: blue;
+}
+
+.BarraSup{
+  background-color: black;
+  padding: 10px; /* Adicionado para um espaçamento interno */
+  display: flex;
+  justify-content: space-between; /* Alinha os itens no topo da barra e os separa */
+  align-items: center; /* Centraliza os itens verticalmente */
+  position: fixed; /* Torna a barra fixa no topo */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
 }

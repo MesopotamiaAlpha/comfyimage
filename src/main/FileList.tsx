@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
+interface FileMetadata {
+  name: string;
+  size: number;
+  modifiedAt: Date;
+  isDirectory: boolean;
+  isFile: boolean;
+  permissions: string;
+  rawMetadata: Record<string, any>;
+}
+
 interface FileListProps {}
 
-// eslint-disable-next-line react/function-component-definition
-const ListaDeArquivos: React.FC<FileListProps> = () => {
-  const [files, setFiles] = useState<string[]>([]);
+const FileList: React.FC<FileListProps> = () => {
+  const [files, setFiles] = useState<FileMetadata[]>([]);
 
   useEffect(() => {
     const fetchFiles = async () => {
@@ -25,11 +34,31 @@ const ListaDeArquivos: React.FC<FileListProps> = () => {
       <h2>Lista de Arquivos:</h2>
       <ul>
         {files.map((file, index) => (
-          <li key={index}>{file}</li>
+          <li key={index}>
+            <strong>{file.name}</strong>
+            <div>Tamanho: {file.size} bytes</div>
+            <div>Data de Modificação: {file.modifiedAt.toString()}</div>
+            <div>É um diretório? {file.isDirectory ? 'Sim' : 'Não'}</div>
+            <div>É um arquivo? {file.isFile ? 'Sim' : 'Não'}</div>
+            <div>Permissões: {file.permissions}</div>
+            {/* Exibir UserComment se estiver presente nos metadados brutos */}
+            {file.rawMetadata?.UserComment && (
+              <div>
+                <h4>User Comment:</h4>
+                <p>{file.rawMetadata.UserComment}</p>
+              </div>
+            )}
+            {/* Exibir todos os campos brutos */}
+            <div>
+              <h4>Metadados Brutos:</h4>
+              <pre>{JSON.stringify(file.rawMetadata, null, 2)}</pre>
+            </div>
+            <hr />
+          </li>
         ))}
       </ul>
     </div>
   );
 };
 
-export default ListaDeArquivos;
+export default FileList;
